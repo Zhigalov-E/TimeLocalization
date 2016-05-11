@@ -11,7 +11,6 @@ import java.util.Date;
  */
 public class TimeBorder {
 
-    private static final Logger logger = Logger.getLogger(TimeBorder.class);
     private  static SimpleDateFormat SDF = new SimpleDateFormat("HH:mm:ss.S");
 
 
@@ -25,19 +24,15 @@ public class TimeBorder {
         Border result;
 
         if(current.getTime() >= morning.getTime() && current.getTime() < day.getTime()){
-            logger.info("morning time");
             result = Border.MORNING;
         }
         else if (current.getTime() >= day.getTime() && current.getTime() < evening.getTime()){
-            logger.info("day time");
             result = Border.DAY;
         }
         else if (current.getTime() >= day.getTime() && current.getTime() < night.getTime()){
-            logger.info("evening time");
             result = Border.EVENING;
         }
         else {
-            logger.info("night time");
             result = Border.NIGHT;
         }
         return result;
