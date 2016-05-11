@@ -16,4 +16,4 @@ Good night, World! 23:00 - 06:00
 Outputind to the console messages received from message resource and
 depend on the user's system locale.
 
-https://travis-ci.org/Zhigalov-E/TimeLocalization.svg?branch=master
+[![Build Status](https://travis-ci.org/Zhigalov-E/TimeLocalization.svg?branch=master)](https://travis-ci.org/Zhigalov-E/TimeLocalization)
