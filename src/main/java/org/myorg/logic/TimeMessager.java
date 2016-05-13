@@ -10,25 +10,22 @@ import java.util.ResourceBundle;
  */
 public class TimeMessager {
 
-    private static String RESOURCE = "message";
+    private static final String RESOURCE = "message";
+    private static final Locale DEFAULT_LOCALE = Locale.getDefault();
 
-
-    private TimeBorder.Border dayPart;
-    private Locale locale;
-
-
-    public TimeMessager(Date date) throws ParseException {
-        this.dayPart = TimeBorder.getMessage(date);
-        this.locale = Locale.getDefault();
+    public static String getLocalMessage(Date date, Locale locale) {
+        return getMessageFromBundleResouse(date, locale);
+    }
+    public static String getLocalMessage(Date date) {
+        return getMessageFromBundleResouse(date, DEFAULT_LOCALE);
+    }
+    public static String getLocalMessage() {
+        return getMessageFromBundleResouse(new Date(), DEFAULT_LOCALE);
     }
 
-    public TimeMessager(Date date, Locale locale) throws ParseException {
-        this.dayPart = TimeBorder.getMessage(date);
-        this.locale = locale;
-    }
-
-    public String getLocalMessage() {
+    private static String getMessageFromBundleResouse(Date date, Locale locale) {
         ResourceBundle bundle = ResourceBundle.getBundle(RESOURCE, locale);
+        TimeBorder.Border dayPart = TimeBorder.getBorder(date);
         String message = "";
         switch (dayPart) {
             case MORNING:
@@ -43,24 +40,9 @@ public class TimeMessager {
             case NIGHT:
                 message = bundle.getString("good.night");
                 break;
-
         }
         return message;
     }
 
-    public TimeBorder.Border getDayPart() {
-        return dayPart;
-    }
 
-    public void setDayPart(TimeBorder.Border dayPart) {
-        this.dayPart = dayPart;
-    }
-
-    public Locale getLocale() {
-        return locale;
-    }
-
-    public void setLocale(Locale locale) {
-        this.locale = locale;
-    }
 }

@@ -16,18 +16,9 @@ public class App {
 
     public static void main(String[] args) {
         log.info("Start application");
-
-
-        try {
-            TimeMessager tm = new TimeMessager(new Date());
-            String message = tm.getLocalMessage();
-            System.out.println(message);
-            log.info("Printed on console:" + message);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            log.error(e.getMessage());
-        }
-
+        String message = TimeMessager.getLocalMessage();
+        System.out.println(message);
+        log.info("Printed on console:" + message);
         log.info("Close application");
     }
 
