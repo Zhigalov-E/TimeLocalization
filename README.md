@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Zhigalov-E/TimeLocalization.svg?branch=master)](https://travis-ci.org/Zhigalov-E/TimeLocalization)
+
 TIME MESSAGE LOCALIZATION
 -------------------------
 
@@ -15,5 +17,3 @@ Good night, World! 23:00 - 06:00
 
 Outputing to the console messages received from message resource and
 depend on the user's system locale.
-
-[![Build Status](https://travis-ci.org/Zhigalov-E/TimeLocalization.svg?branch=master)](https://travis-ci.org/Zhigalov-E/TimeLocalization)
